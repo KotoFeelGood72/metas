@@ -1,0 +1,71 @@
+.social-list {
+	@include flex-end;
+	@include bp($point_2) {
+		justify-content: flex-start;
+	}
+	li {
+		width: 6.2rem;
+		height: 6.2rem;
+		opacity: 0;
+
+		@include bp($point_2) {
+			width: 4rem;
+			height: 4rem;
+		}
+		&:not(:last-child) {
+			margin-right: 3rem;
+		}
+
+		&:last-child {
+			a {
+				font-size: 3.4rem;
+				stroke-width: .15rem;
+				@include bp($point_2) {
+					font-size: 2.5rem;
+				}
+			}
+		}
+	}
+	a {
+		background-color: $white;
+		@include flex-center;
+		border-radius: $gl_radius;
+		width: 100%;
+		height: 100%;
+		font-size: 3rem;
+		color: $dark;
+
+		@include bp($point_2) {
+			font-size: 2.4rem;
+		}
+
+		&:hover {
+			color: $white;
+			
+		}
+	}
+}
+
+.green {
+	a {
+		&:hover {
+			background-color: #25D366;
+		}
+	}
+}
+
+.blue {
+	a {
+		&:hover {
+			background-color: #229ED9;
+		}
+	}
+}
+
+.dark-blue {
+	a {
+		&:hover {
+			background-color: #0077FF;
+		}
+	}
+}

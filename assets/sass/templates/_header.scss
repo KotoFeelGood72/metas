@@ -1,0 +1,113 @@
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: $header;
+	width: 100%;
+	will-change: transform;
+	@include z-index(header);
+	color: $white;
+	transition: all .3s ease;
+	&.fixed {
+		background-color: #2e2a2a93;
+		backdrop-filter: blur(2rem);
+		height: 8rem;
+
+
+		.logo {
+			width: 5rem;
+		}
+	}
+	a {
+		color: inherit;
+		font-family: $font_2;
+	}
+}
+
+
+.header_nav ul, .header_contacts, .header_col--right, .header {
+	@include flex-start;
+}
+
+.header_main {
+	@include flex-space;
+}
+.header {
+}
+.section_in {
+}
+.header_main {
+}
+.header_col--right {
+	opacity: 0;
+
+	@include bp($point_2) {
+		opacity: 1;
+	}
+}
+.header_logo {
+	margin-right: 5.6rem;
+	// height: 8.7rem;
+}
+.logo {
+	transition: all .4s ease;
+	width: 7.4rem;
+}
+.header_nav {
+
+	@include bp($point_2) {
+		display: none;
+	}
+
+	ul {
+		li {
+			&:not(:last-child) {
+				margin-right: 7rem;
+			}
+		}
+	}
+}
+.header_contacts {
+	opacity: 0;
+	@include bp($point_4) {
+		display: none;
+	}
+
+	li {
+		&:not(:last-child) {
+			margin-right: 7.9rem;
+		}
+	}
+}
+
+
+
+.header_burger {
+	display: none;
+	position: relative;
+	@include bp($point_2) {
+		@include flex-center;
+		width: 5rem;
+		height: 3rem;
+
+	}
+	span {
+		position: absolute;
+		right: 0;
+		display: block;
+		width: 100%;
+		border-bottom: .4rem solid $white;
+		&:nth-child(1) {
+			top: 0;
+		}
+		&:nth-child(2) {
+			top: 50%;
+			transform: translateY(-50%);
+			max-width: 80%;
+		}
+		&:nth-child(3) {
+			max-width: 60%;
+			bottom: 0;
+		}
+	}
+}

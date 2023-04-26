@@ -1,0 +1,116 @@
+extends _layout
+
+block vars
+	- array = {body_class:'', layout_mod:'', sub_keywords:'', title_inner:'HOME'}
+block content_block
+	section.mb10.hero.before-back(style="background: url('/i/hero.jpg') center/cover no-repeat") 
+		.section_in 
+			.hero_main 
+				.hero_title_w 
+					h1 Изделия из металла
+					+btn({
+						name: 'Оставить заявку',
+						class: 'white',
+						target: 'form'
+					})
+				.hero_txt.global_txt 
+					p Находимся в Краснодаре.
+					p Работаем с большой разновидностью металлов, придавая им самые замысловатые формы и узоры.
+			.hero_bottom 
+				include components/social
+	section.about.pt10.sec_anim#about
+		.section_in 
+			.about_main 
+				.about_head.mb10.el_anim 
+					h2!='металл, </br>говорящий за себя' 
+					.about_txt.global_txt.el_anim 
+						p Изготовление металлических изделий в Краснодаре под заказ является основным направлением деятельности компании.
+						p Мы располагаем собственной производственной базой, а также оборудованием, позволяющим с высокой точностью обрабатывать детали.
+				.about_img.el_anim 
+					img(src="i/about-bg.jpg", alt="")
+	section.production.sec_anim 
+		.section_in 
+			.production_main.el_anim 
+				.production_head 
+					h3 изготовление под заказ
+					.production_txt 
+						p Изготовление в Краснодаре под заказ: мебель в стиле лофт, мангалы, печи, навесы, лестницы и перила, 3д изделия из металла, заборы, ворота, ворота секционные, ролеты, любые изделия из металла.
+				.production_slider_w.pb15
+					.slider-nav
+						.slide-prev.prod-prev.scale-hover
+							+icon('prev')
+						.slide-next.prod-next.scale-hover
+							+icon('next')
+					.production_slider.swiper.group-slider 
+						.swiper-wrapper
+							-for(i = 0; i < 14; i++)
+								- let idx = i % 7
+									.swiper-slide 
+										.production-slide.trigger(data-target="form") 
+											img(src=`i/slider/slider-${idx}.jpg`, alt="")
+					.cursor 
+						button(type="button") Заказать
+	section.what.m15.sec_anim.secs_anim#what
+		.section_in 
+			.what_main 
+				.what_title.el_anim 
+					h3.el_anim.mb6 почему нужно заказать у нас?
+					+btn({
+						name: 'Оставить заявку',
+						class: 'white el_anim',
+						target: 'form'
+					})
+				.what_list_w
+					.line
+					ul.what_list.grid-2 
+						-for(i = 0; i < 4; i++)
+							- let whatTitle = ['Выгода', 'Подход к работе ', 'Оборудование', 'Сроки']
+							- let whatTxt = ['Каждому клиенту мы сделаем выгодное предложение.</br></br>Мы нацелены на удовлетворение потребностей заказчика и на долгосрочное сотрудничество.', 'У нас работают профессионалы, учитывающие все запросы заказчика.</br></br>Индивидуальный подход позволяет реализовывать проекты даже высокой сложности.', 'Продукция выпускается только на современных станках с применением подходящего инструмента.</br></br>Мы строго соблюдаем все размерные характеристики.', 'Изделия из металла на заказ в Краснодаре выпускаются даже в ограниченные сроки.</br></br>Мы четко следуем условиям договоров и не задерживаем сдачу изделий.']
+								li.el_anim 
+									h5.circle-decore.fz34=whatTitle[i]
+									p!=whatTxt[i]
+	section.services.sec_anim#services 
+		.section_in 
+			.services_main 
+				h5.mb10.el_anim Наши Услуги
+				ul.services_list.grid-3 
+					-for(i = 0; i < 9; i++)
+						- let serviceTitle = ['Порошковая покраска', 'Плазморез', 'Трубогиб', 'Сварка аргон и обычная', 'Восстановление дисков на авто с порошковой покраской', 'Автоматика для ворот откатных и распашных', 'Ворота секционные установка монтаж', 'Ворота распашные', '3D заборы и навесы']
+						li.services_item.el_anim
+							a(href="#" class="trigger" data-target="service") 
+								.services_item--img 
+									img(src=`i/services/${i}.jpg`, alt="")
+									.service-plus.scale-hover 
+										+icon('plus')
+								h3.fz24=serviceTitle[i]
+	section.reviews.sec_anim#reviews
+		.section_in 
+			.reviews_main
+				.reviews_head.mb8  
+					h5.el_anim Отзывы
+					.slider-nav.el_anim 
+						.slide-prev.rev-prev.scale-hover
+							+icon('prev')
+						.slide-next.rev-next.scale-hover
+							+icon('next')
+				.reviews_slider.swiper 
+					.swiper-wrapper
+						-for(idx = 0; idx < 12; idx++) 
+							.swiper-slide.el_anim
+								.reviews_slide.showMoreBlock 
+									.reviews_slide--head 
+										p.fz30 имя фамилия
+										span 20 / 20 / 2023
+									.reviews_slide--body.showMoreTxt!='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </br></br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </br></br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+									.reviews_more.showMoreBtn Показать больше
+									ul.reviews_gallery
+										-for(i = 0; i < 4; i++)
+											if i < 3
+												li.reveiews_item--gallery 
+													a(href="i/slider/slider-1.jpg" data-fancybox=`reviews-${idx}`)
+														img(src="i/slider/slider-1.jpg", alt="")
+											else 
+												li.reveiews_item--gallery 
+													a(href="i/slider/slider-1.jpg" data-fancybox=`reviews-${idx}` data-count="10" class="fz30")
+					.reviews_pagination
+

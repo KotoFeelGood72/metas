@@ -1,0 +1,384 @@
+.before-back {
+	&:before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		content: '';
+		background-color: $dark;
+		opacity: .75;
+		z-index: 1;
+	}
+}
+
+
+// Margin //
+.m10 {
+	margin: 10rem 0;
+}
+.mb10 {
+	margin-bottom: 10rem;
+	@include bp($point_2) {
+		margin-bottom: 6rem;
+	}
+}
+.mt10 {
+	margin-top: 10rem;
+	@include bp($point_2) {
+		margin-top: 6rem;
+	}
+}
+
+.mb15 {
+	margin-bottom: 15rem;
+}
+
+.m15 {
+	margin: 15rem 0;
+	@include bp($point_2) {
+		margin: 8rem 0;
+	}
+	@include bp($point_4) {
+		margin: 6rem 0;
+	}
+}
+.mb75 {
+	margin-bottom: 7.5rem;
+}
+.mt75 {
+	margin-top: 7.5rem;
+}
+
+.mb6 {
+	margin-bottom: 6rem;
+}
+
+.mb8 {
+	margin-bottom: 8rem;
+
+	@include bp($point_4) {
+		margin-bottom: 6rem;
+	}
+}
+
+// End margin style //
+
+// Padding //
+
+.p10 {
+	padding: 10rem 0;
+}
+.pt10 {
+	padding-top: 10rem;
+
+	@include bp($point_4) {
+		padding-top: 6rem;
+	}
+}
+.pb10 {
+	padding-bottom: 10rem;
+	@include bp($point_4) {
+		padding-bottom: 6rem;
+	}
+}
+
+
+
+
+// Grid mode
+
+.grid-2 {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
+	@include bp($point_2) {
+		grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
+	}
+	@include bp($point_4) {
+		grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+	}
+}
+
+.grid-3 {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+	@include bp($point_2) {
+			grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
+	}
+	@include bp($point_4) {
+		grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+	}
+}
+
+
+// end grid mode
+
+
+.p15 {
+	padding: 15rem 0;
+}
+.pt75 {
+	padding-top: 7.5rem;
+}
+.pb75 {
+	padding-bottom: 7.5rem;
+}
+.pb15 {
+	padding-bottom: 15rem;
+	@include bp($point_2) {
+		padding-bottom: 8rem;
+	}
+
+	@include bp($point_4) {
+		padding-bottom: 6rem;
+	}
+}
+// End padding style //
+
+
+
+// Font size mod 
+
+.fz34 {
+	font-size: 3.4rem;
+	font-family: $font_3;
+	font-weight: 400;
+	text-transform: none;
+	line-height: 4rem;
+
+	@include bp($point_2) {
+		font-size: 3rem;
+		line-height: 3.8rem;
+	}
+}
+
+.fz24 {
+	font-size: 2.4rem;
+	font-family: $font_3;
+	font-weight: 400;
+	text-transform: none;
+	line-height: 2.8rem;
+
+	@include bp($point_4) {
+		font-size: 2rem;
+		line-height: 2.6rem;
+	}
+}
+
+.fz30 {
+	font-size: 3rem;
+	font-family: $font_3;
+	line-height: 3.5rem;
+
+	@include bp($point_2) {
+		font-size: 2.4rem;
+		line-height: 3.2rem;
+	}
+}
+
+
+// end font size
+
+// Circle decor
+
+.circle-decore {
+	position: relative;
+	padding-left: 3rem;
+
+	@include bp($point_2) {
+		padding-left: 0;
+	}
+
+	&:before {
+		position: absolute;
+		top: 1.6rem;
+		left: 0;
+		width: 1.5rem;
+		height: 1.5rem;
+		border-radius: $gl_radius;
+		background-color: $orange;
+		content: '';
+		@include bp($point_2) {
+			display: none;
+		}
+	}
+}
+
+.line {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 100%;
+	height: .1rem;
+	content: '';
+	border-bottom: .1rem solid rgba(255, 255, 255, 0.2);
+
+	@include bp($point_2) {
+		display: none;
+	}
+}
+
+.showMoreTxt {
+	overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 7;
+  line-height: 2.4rem;
+  max-height: 14.4rem;
+	margin-bottom: 3rem;
+	&.visible {
+		max-height: 100%;
+		-webkit-line-clamp: 1000;
+	}
+}
+
+.global_input {
+	position: relative;
+	margin-bottom: 7rem;
+	@include bp($point_2) {
+		margin-bottom: 4rem;
+	}
+	@include bp($point_4) {
+		margin-bottom: 3rem;
+		width: 100%;
+	}
+	&:after {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 0;
+		border-bottom: .1rem solid $white;
+		content: '';
+		transition: all .5s ease;
+	}
+	&:nth-child(2) {
+		margin-bottom: 8rem;
+		@include bp($point_2) {
+			margin-bottom: 6rem;
+		}
+		@include bp($point_4) {
+			margin-bottom: 4rem;
+		}
+	}
+	input {
+		@include app;
+		padding: 1.5rem 0;
+		width: 100%;
+		border-bottom: .1rem solid rgba(255, 255, 255, 0.5);
+
+		@include bp($point_4) {
+			padding: 1rem 0;
+			font-size: 1.6rem;
+		}
+	}
+
+
+	.animated-label {
+		position: absolute;
+		top: 1.3rem;
+		left: 0;
+		font-family: $font_2;
+		transition: all .3s ease;
+		pointer-events: none;
+		user-select: none;
+	}
+
+	&.is-focused, &.is-active {
+		.animated-label {
+			top: -1rem;
+			font-size: 1.4rem;
+			opacity: .7;
+		}
+		&:after {
+			width: 100%;
+		}
+	}
+}
+
+.default-link {
+	&:hover {
+		color: $orange;
+	}
+}
+
+.cursor {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 18.3rem;
+	height: 18.3rem;
+	background-color: $orange;
+	border-radius: 100%;
+	user-select: none;
+	pointer-events: none;
+	z-index: 11;
+	opacity: 0;
+	transition: opacity .3s ease ;
+	@include flex-center;
+
+	@include bp($point_2) {
+		display: none;
+	}
+	button {
+		color: $white;
+		text-transform: uppercase;
+	}
+
+	&.active {
+		opacity: 1;
+		transition: opacity .3s ease ;
+	}
+}
+
+
+.custom-scroll {
+	&::-webkit-scrollbar {
+		width: 1rem; 
+		height: .8rem; 
+		background-color: #ffffff3b;
+	}
+	&::-webkit-scrollbar-thumb {
+		background-color: $orange;
+	}
+
+	&::-webkit-scrollbar-thumb:hover {
+		background-color: #aa2b1b;
+	}
+}
+
+.link-hover {
+	li.active {
+		a {
+			&:before, &:after {
+				width: 100%;
+			}
+		}
+	}
+	a {
+		position: relative;
+		&:before, &:after {
+			position: absolute;
+			bottom: -.3rem;
+			height: .2rem;
+			width: 0;
+			transition: all .4s ease-in;
+			background-color: $orange;
+			content: '';
+		}
+		&:after {
+			right: 0;
+		}
+		&:before {
+			left: 0;
+		}
+		&:hover {
+			&:before, &:after {
+				width: 100%;
+			}
+		}
+	}
+}
+
+
+

@@ -1,0 +1,7 @@
+ul.social-list
+	-for(i = 0; i < 3; i++)
+		- let icons = ['ph:whatsapp-logo-thin', 'ph:telegram-logo-thin', 'arcticons:vk']
+		- let mod = ['green', 'blue', 'dark-blue']
+				li(class=mod[i]) 
+					a(href="#")
+						span(data-icon=`${icons[i]}` class="iconify")

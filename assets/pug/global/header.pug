@@ -1,0 +1,42 @@
+header.header 
+	.section_in 
+		.header_main
+			.header_col--right
+				.header_logo 
+					include ../components/logo
+				nav.header_nav.link-hover
+					ul
+						-
+							let nav = [
+								{
+									name: 'Чем занимаемся', 
+									link: '#about'
+								},
+								{
+									name: 'Преимущества', 
+									link: '#what'
+								},
+								{
+									name: 'Услуги', 
+									link: '#services'
+								},
+								{
+									name: 'Отзывы', 
+									link: '#reviews'
+								},
+								{
+									name: 'Контакты', 
+									link: '#contacts'
+								},
+							]
+						each item in nav
+							li 
+								a(href=item.link)=item.name
+			ul.header_contacts.link-hover 
+				each item in ['mail@mail.ru', '+7 000 000 00 00']
+					li 
+						a(href="#")=item
+			.header_burger.trigger(data-target="burger")
+				span 
+				span 
+				span  

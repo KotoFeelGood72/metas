@@ -1,0 +1,23 @@
+mixin btn(data)
+	.btn(class=data.class ? data.class : 'dark')
+		if data.link
+			a(href=data.linkUrl)=data.link
+		else if data.submit
+			input(type="submit" value=data.submit)
+		else
+			button(type="button" data-target=data.target class="trigger")=data.name
+
+
+// Input
+
+mixin input(data)
+	.global_input(class=data.class ? data.class : data.class="form_input")
+		if data.type === "submit"
+			input(type=data.type ? data.type : data.type="text" value=data.val ? data.val : data.val="Ваше имя"  autocomplete="off")
+		if data.label
+			input(type=data.type ? data.type : data.type="text" placeholder="" id=data.id class="animated-input"  autocomplete="off")
+			label(for=data.id class="animated-label")=data.place 
+		else
+			input(type=data.type ? data.type : data.type="text" placeholder=data.place ? data.place : data.place="Ваше имя")
+
+// End input

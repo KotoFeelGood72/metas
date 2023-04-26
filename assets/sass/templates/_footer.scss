@@ -1,0 +1,204 @@
+.footer {
+	width: 100%;
+	min-height: $footer;
+	flex: 0 0 auto;
+	will-change: transform;
+	position: relative;
+	background-color: $dark;
+	overflow-y: hidden;
+	* {
+		color: $white;
+	}
+}
+
+.footer {
+}
+.section_in {
+}
+.footer_main {
+	@include flex-space;
+	padding: 10rem 0 20.4rem 0;
+	@include bp($point_2) {
+		flex-direction: column;
+		align-items: flex-start;
+		padding: 10rem 0;
+	}
+}
+.contacts_info {
+	max-width: 38.3rem;
+	@include bp($point_2) {
+		margin-bottom: 6rem;
+	}
+
+	h2, h3, h4, h5, h6 {
+		margin-bottom: 5.3rem;
+	}
+}
+.contacts_list {
+
+	li {
+		pointer-events: none;
+		a {
+			font-family: $font_2;
+		}
+		&:not(:last-child) {
+			margin-bottom: 3rem;
+			pointer-events: all;
+
+			@include bp($point_4) {
+				margin-bottom: 1.5rem;
+			}
+		}
+		
+	}
+}
+.footer_form {
+
+	@include bp($point_4) {
+		width: 100%;
+	}
+
+	.global-form {
+		max-width: 78rem;
+		width: 100%;
+
+		input[type="submit"] {
+			color: $white!important;
+		}
+	}
+}
+.global-form {
+}
+.global_input {
+}
+.form_input {
+}
+.global_form--bottom {
+	@include flex-start;
+
+	@include bp($point_4) {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.btn {
+		margin-right: 3rem;
+
+		@include bp($point_4) {
+			margin: 0 0 2rem 0;
+		}
+	}
+}
+.btn {
+}
+.form-notice {
+	max-width: 41rem;
+
+
+	@include bp($point_2) {
+		font-size: 1.6rem;
+		max-width: 30rem
+	}
+
+	@include bp($point_4) {
+		font-size: 1.2rem;
+		max-width: 25rem
+	}
+
+}
+.footer_bottom {
+	@include flex-space;
+	padding: 3rem 0;
+	border-top: .1rem solid rgba(255, 255, 255, 0.3);
+
+
+
+	@include bp($point_4) {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+}
+.footer_col--left {
+	font-size: 1.8rem;
+	margin: -2rem -10rem 0 0;
+
+	@include bp($point_2) {
+		font-size: 1.4rem;
+		margin: -1rem -4rem 0 0;
+	}
+	
+	
+	@include bp($point_4) {
+		font-size: 1.4rem;
+		margin: -1rem -2rem 2rem 0;
+		align-items: flex-start!important;
+		flex-direction: column;
+	}
+
+
+	*  {
+		padding: 2rem 10rem 0 0;
+		@include bp($point_2) {
+			padding: 1rem 4rem 0 0;
+		}
+
+		@include bp($point_4) {
+			padding: 1rem 2rem 0 0;
+		}
+	}
+}
+
+.footer_col--right, .footer_col--left {
+	@include flex-start;
+
+	.social-list {
+		@include bp($point_2) {
+			display: none;
+		}
+	}
+} 
+
+.footer_col--right {
+
+	.social-list {
+		li {
+			a, svg, path {
+				color: $dark!important;
+			}
+
+			&:hover {
+				a, svg, path {
+					color: $white!important;
+				}
+			}
+		}
+	}
+}
+.brand {
+	margin-right: 34.2rem;
+	width: 23.8rem;
+	transition: all .3s ease;
+
+	@include bp($point_2) {
+		margin-right: 0;
+		max-width: 15rem;
+	}
+
+	@include bp($point_4) {
+		margin-right: 0;
+		max-width: 18rem;
+	}
+	&:hover {
+		opacity: .7;
+	}
+}
+.social-list {
+}
+.icon {
+}
+.icon-wa {
+}
+.icon-tg {
+}
+.icon-vk {
+}

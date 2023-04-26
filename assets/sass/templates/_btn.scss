@@ -1,0 +1,82 @@
+.wave {
+  background: rgba(255, 255, 255, .4);
+  border-radius: 50%;
+  transform: scale(0);
+  animation: wave .5s linear;
+  pointer-events: none;
+  position: absolute;
+}
+
+@keyframes wave {
+  100% {
+   transform: scale(2);
+   opacity: 0;
+  }
+}
+
+.btn {
+	position: relative;
+	overflow: hidden;
+	display: inline-block;
+	border-radius: $gl_radius;
+	button, a, input[type="submit"] {
+		@include app;
+		font-family: $font_2;
+		text-transform: uppercase; 
+		border: .1rem solid $orange;
+		display: block;
+		padding: 2.5rem 5.3rem;
+		border-radius: $gl_radius;
+		transition: all .3s ease;
+		cursor: pointer;
+
+		@include bp($point_2) {
+			padding: 1.8rem 4rem;
+			font-size: 1.6rem;
+		}
+
+		@include bp($point_4) {
+			padding: 1.6rem 3rem;
+			font-size: 1.4rem;
+		}
+
+		&:hover {
+			background-color: $orange;
+		}
+	}
+
+	&.dark {
+		button, a, input[type="submit"] {
+			color: $dark;
+		}	
+	}
+	&.white {
+		button, a, input[type="submit"] {
+			color: $white;
+		}
+	}
+}
+
+.scale-hover {
+	position: relative;
+	transition: all .3s ease;
+	&:hover {
+		color: $white;
+		&:before {
+			transform: scale(1);
+		}
+	}
+	&:before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		content: '';
+		background-color: $orange;
+		border-radius: $gl_radius;
+		@include z-index(el);
+		transition: all .3s ease;
+		transform: scale(0);
+	}
+}

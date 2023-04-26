@@ -1,0 +1,86 @@
+.popup(data-id="form")
+	.popup_bg.remove 
+	.popup_main.custom-scroll 
+		.popup_close.remove 
+			+icon('close')
+		h3 форма заявки
+		include ../components/form
+
+.popup.service-popup(data-id="service")
+	.popup_bg.remove 
+	.popup_main.service_popup--main.custom-scroll
+		.popup_close.remove 
+			+icon('close')
+		h3.fz30 Восстановление дисков на авто с порошковой покраской
+		.service_popup--txt 
+			p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+			p Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+		.servicePopup_slider--w
+			.slider-nav 
+				.slide-prev.popup-prev
+					+icon('prev')
+				.slide-next.popup-next
+					+icon('next')
+			.servicePopup_slider.swiper 
+				.swiper-wrapper 
+					-for(i = 0; i < 14; i++)
+						- let idx = i % 7
+							.swiper-slide 
+								.servicePopup_slide
+									img(src=`i/services/${idx}.jpg`, alt="")
+		.service-form  
+			+input({
+				place: 'Ваше имя',
+				label: true,
+				id: 'inputPopupName'
+			})
+			+input({
+				place: 'Ваш телефон',
+				type: 'tel',
+				label: true,
+				id: 'inputPopupPhone'
+			})
+			+btn({
+				submit: 'Оставить заявку'
+			})
+
+.burger.popup(data-id="burger") 
+	.popup_bg.remove 
+	.popup_main.burger_main
+		.popup_close.remove 
+			+icon('close') 
+		.burger_logo
+			include ../components/logo
+		nav.header_nav.link-hover 
+			ul
+				-
+					let navBurger = [
+						{
+							name: 'Чем занимаемся', 
+							link: '#about'
+						},
+						{
+							name: 'Преимущества', 
+							link: '#what'
+						},
+						{
+							name: 'Услуги', 
+							link: '#services'
+						},
+						{
+							name: 'Отзывы', 
+							link: '#reviews'
+						},
+						{
+							name: 'Контакты', 
+							link: '#contacts'
+						},
+					]
+				each item in navBurger
+					li.remove 
+						a(href=item.link)=item.name
+		ul.header_contacts.link-hover 
+			each item in ['mail@mail.ru', '+7 000 000 00 00']
+				li 
+					a(href="#")=item

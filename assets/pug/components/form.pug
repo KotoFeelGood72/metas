@@ -1,0 +1,17 @@
+.global-form 
+	+input({
+		place: 'Ваше имя',
+		label: true,
+		id: 'inputName'
+	})
+	+input({
+		place: 'Ваш телефон',
+		type: 'tel',
+		label: true,
+		id: 'inputPhone'
+	})
+	.global_form--bottom 
+		+btn({
+			submit: 'Оставить заявку'
+		})
+		.form-notice!='Отправляя форму, вы соглашаетесь с <a href="#" class="default-link" target="_blank">политикой конфиденциальности.</a>'

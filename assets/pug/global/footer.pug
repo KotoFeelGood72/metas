@@ -1,0 +1,19 @@
+footer.footer.sec_anim#contacts 
+	.section_in 
+		.footer_main
+			.contacts_info 
+				h6.el_anim Наши Контакты
+				ul.contacts_list 
+					each item in ['+7 000 000 00 00', 'mail@mail.ru', 'Место для Адреса компании']
+						li.el_anim 
+							a(href="#" class="default-link")=item
+			.footer_form.el_anim 
+				include ../components/form
+		.footer_bottom 
+			.footer_col--left 
+				p.el_anim © 2023 Все права защищены
+				a.el_anim(href="#" class="default-link") Политика конфиденциальности
+			.footer_col--right 
+				a.el_anim(href="#" class="brand")
+					img(src="i/global/brand.svg", alt="")
+				include ../components/social
