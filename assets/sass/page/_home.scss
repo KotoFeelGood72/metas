@@ -546,20 +546,16 @@
 	}
 }
 .reviews_gallery {
+	margin-right: 1.5rem;
+	max-width: 39rem;
 
-	padding-top: 3rem;
-	@include flex-start;
-	margin: -1.5rem -1.5rem 0 0;
-	max-width: 38.3rem;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(8.9rem, 1fr));
+	grid-gap: 1rem;
 	@include bp($point_2) {
 		max-width: 90%;
-		margin: -1rem -1rem 0 0;
 	}
 	li {
-		padding: 1.5rem 1.5rem 0 0;
-		@include bp($point_2) {
-			padding: 1rem 1rem 0 0;
-		}
 		a {
 			width: 8.9rem;
 			height: 8.9rem;
@@ -577,22 +573,6 @@
 		opacity: .7;
 	}
 
-	&:last-child {
-		a {
-			&:before {
-				background-color: $orange;
-				content: '+' attr(data-count);
-				width: 100%;
-				height: 100%;
-				@include flex-center;
-				color: $white;
-
-				@include bp($point_2) {
-					font-size: 2rem;
-				}
-			}
-		}
-	}
 }
 
 .reviews_pagination {
@@ -601,4 +581,29 @@
 		display: block;
 		position: absolute;
 	}
+}
+
+.loadmore-gallery {
+	a {
+		@include flex-center;
+		width: 8.9rem;
+		height: 8.9rem;
+		&:before {
+			background-color: $orange;
+			content: '+' attr(data-count);
+			width: 100%;
+			height: 100%;
+			@include flex-center;
+			color: $white;
+
+			@include bp($point_2) {
+				font-size: 2rem;
+			}
+		}
+	}
+}
+
+.reviews_gallery--w {
+	@include flex-start;
+	padding-top: 3rem;
 }

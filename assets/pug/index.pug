@@ -103,14 +103,13 @@ block content_block
 										span 20 / 20 / 2023
 									.reviews_slide--body.showMoreTxt!='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </br></br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </br></br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
 									.reviews_more.showMoreBtn Показать больше
-									ul.reviews_gallery
-										-for(i = 0; i < 4; i++)
-											if i < 3
-												li.reveiews_item--gallery 
-													a(href="i/slider/slider-1.jpg" data-fancybox=`reviews-${idx}`)
-														img(src="i/slider/slider-1.jpg", alt="")
-											else 
-												li.reveiews_item--gallery 
-													a(href="i/slider/slider-1.jpg" data-fancybox=`reviews-${idx}` data-count="10" class="fz30")
+									.reviews_gallery--w
+										ul.reviews_gallery
+											-for(i = 0; i < 4; i++)
+													li.reveiews_item--gallery 
+														a(href="i/slider/slider-1.jpg" data-fancybox=`reviews-${idx}`)
+															img(src="i/slider/slider-1.jpg", alt="")
+										.loadmore-gallery 
+											a(href="i/slider/slider-1.jpg" data-fancybox=`reviews-${idx}` data-count="10" class="fz30")
 					.reviews_pagination
 
